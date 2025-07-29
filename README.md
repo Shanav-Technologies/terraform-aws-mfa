@@ -17,7 +17,7 @@ This Terraform module creates structured mfa for aws resources with specific att
 
 ```hcl
 module "mfa" {
-  source      = "git::https://github.com/shanav-tech/terraform-aws-mfa.git?ref=v1.0.0"
+  source      = "git::https://github.com/Shanav-Technologies/terraform-aws-mfa.git?ref=v1.0.0"
   name        = "mfa1"
   environment = "test"
   users       = []
@@ -34,21 +34,21 @@ Please ensure you specify the correct 'source' path for the module.
 - `environment`: The environment (e.g., "test", "production").
 - `label_order`: Label order, e.g. `name`,`application`.
 - `enabled`: Flag to control the mfa creation.
-- `managedby`:  ManagedBy, eg 'shanav-tech'.
+- `managedby`:  ManagedBy, eg 'Shanav-Technologies'.
 - `floating_ip` : Boolean to control whether floating IPs should be created.
 
 ## Module Outputs
 - This module currently does not provide any outputs.
 
 # Examples
-For detailed examples on how to use this module, please refer to the '[example](https://github.com/shanav-tech/terraform-aws-mfa/tree/master/example)' directory within this repository.
+For detailed examples on how to use this module, please refer to the '[example](https://github.com/Shanav-Technologies/terraform-aws-mfa/tree/master/example)' directory within this repository.
 
 ## Authors
 Your Name
 Replace '[License Name]' and '[Your Name]' with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/shanav-tech/terraform-aws-mfa/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Shanav-Technologies/terraform-aws-mfa/blob/master/LICENSE) file for details.
 
 
 
@@ -58,29 +58,29 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.8.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.50.0 |
-| <a name="requirement_tls"></a> [tls](#requirement\_tls) | >= 4.0.4 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 6.5.0 |
+| <a name="requirement_tls"></a> [tls](#requirement\_tls) | 4.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.50.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.5.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/shanav-tech/terraform-aws-labels.git | v1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/Shanav-Technologies/terraform-aws-labels.git | v1.0.0 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [aws_iam_group_policy_attachment.assign_force_mfa_policy_to_groups](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_group_policy_attachment) | resource |
-| [aws_iam_policy.enable_mfa](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
-| [aws_iam_user_policy_attachment.assign_force_mfa_policy_to_users](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_user_policy_attachment) | resource |
-| [aws_iam_policy_document.enable_mfa](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_group_policy_attachment.assign_force_mfa_policy_to_groups](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/iam_group_policy_attachment) | resource |
+| [aws_iam_policy.enable_mfa](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/iam_policy) | resource |
+| [aws_iam_user_policy_attachment.assign_force_mfa_policy_to_users](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/iam_user_policy_attachment) | resource |
+| [aws_iam_policy_document.enable_mfa](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
 
@@ -89,7 +89,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
 | <a name="input_groups"></a> [groups](#input\_groups) | enable MFA for the members in these groups | `list(string)` | `[]` | no |
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. `name`,`application`. | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'shanav-tech'. | `string` | `"shanav-tech"` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'Shanav-Technologies'. | `string` | `"Shanav-Technologies"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `test` or `mfa`). | `string` | n/a | yes |
 | <a name="input_path"></a> [path](#input\_path) | The path of the policy in MFA. | `string` | `"/"` | no |
 | <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `""` | no |
